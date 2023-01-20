@@ -17,3 +17,38 @@ The loop then uses the Poisson distribution to generate customers based on the t
 In this way, the loop simulates the operations of a food court and allows me to determine which system of seat reservation, the chope system or the first-come-first-served system, is more efficient. The loop is designed to be flexible and can be adapted to other similar scenarios, making it useful in determining the most efficient system in any food court setting.
 
 In this way, I was able to simulate the food court operations, and determine that the chope system is more efficient for serving food during peak hours, as it leads to fewer people waiting in queues. This solution can be easily adapted to other similar scenarios and will be useful in determining the most efficient system in any food court setting.
+
+
+# Results
+
+Here is an example for 5000 repeated simulations. Simulated a rate of 2.8 for the first period, followed by 1.4 for the 60 and 45 minute periods respectively. Results are comparing scenarios where ALL customers reserve places, vs ALL customers do not do so.
+
+## Sales
+
+![Sales](https://user-images.githubusercontent.com/100022747/213763864-cccff059-c500-4256-9122-254724e3ab41.png)
+
+## Time Distrbution
+
+Distribution of time spent for customers. 
+
+![TimeDistribution](https://user-images.githubusercontent.com/100022747/213764065-314877b6-ac9e-43d3-9052-84a2a0d760c7.png)
+
+## Number of customers who entered court
+
+![Patrons](https://user-images.githubusercontent.com/100022747/213764342-c41a09e4-c560-4cba-9957-c99bc9a88acc.png)
+
+## Number of customers who remain in the food court 
+
+This is after peak hour simulation is over
+
+
+![Remaining_Customers](https://user-images.githubusercontent.com/100022747/213764517-d05c8539-1730-4f00-b6f7-6cc27559f4bc.png)
+
+
+## Number of customers queueing for tables by end of simulation
+
+
+![Waittable_atend](https://user-images.githubusercontent.com/100022747/213764588-33704d62-7bc7-4f2f-b23b-d2bbf2b9e25a.png)
+
+
+
