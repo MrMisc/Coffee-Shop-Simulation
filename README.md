@@ -5,7 +5,22 @@ I have used Rust to simulate the operations of a food court, in order to determi
 
 First, I created a struct for customers, which contains fields such as whether or not they are using the chope system, their group size, the amount of time they spend eating, and whether or not they have queued, been seated, and finished eating. I then used a Poisson distribution to randomly generate customers based on the time of day, with more customers arriving during peak hours.
 
-The Customer struct is used to represent each customer that enters the food court. It has several fields, such as chope, group_size, current, eating_time, stalls, time_spent, queued, tabled, and eaten, that are used to keep track of the customer's status and actions. The chope field is a boolean that represents whether the customer has reserved a table before arriving at the food court. The group_size field represents the size of the customer's group, and is used to determine how many tables they need. The current field represents the amount of time the customer has left before they can take their next action. The eating_time field represents the amount of time the customer will spend eating. The stalls field is a vector that represents the food stalls that the customer will visit. The time_spent field is the amount of time the customer has spent in the food court so far. The queued field is a boolean that represents whether the customer is currently in a queue. The tabled field is a boolean that represents whether the customer has a table reserved. The `eaten
+The Customer struct is used to represent each customer that enters the food court. It has several fields, such as chope, group_size, current, eating_time, stalls, time_spent, queued, tabled, and eaten, that are used to keep track of the customer's status and actions. The chope field is a boolean that represents whether the customer has reserved a table before arriving at the food court. The group_size field represents the size of the customer's group, and is used to determine how many tables they need. The current field represents the amount of time the customer has left before they can take their next action. The eating_time field represents the amount of time the customer will spend eating. The stalls field is a vector that represents the food stalls that the customer will visit. The time_spent field is the amount of time the customer has spent in the food court so far. The queued field is a boolean that represents whether the customer is currently in a queue. The tabled field is a boolean that represents whether the customer has a table reserved. The ``eaten``field together with the current fields are the critical elements of the struct that indicate to the implemented methods that this customer has completed their visit.
+
+```rs
+#[derive(Clone)]
+pub struct Customer {
+    chope: bool,
+    group_size: u8,
+    current: u32,
+    eating_time: u32,
+    stalls:Vec<u8>,
+    time_spent: u32,
+    queued: bool,
+    tabled: bool,
+    eaten: bool,
+}
+```
 
 
 Next, I implemented the concept of tables and waiting lists, using arrays and vectors in Rust. The tables were represented by an array, and the waiting lists were represented by vectors, which can change in length. The tables are occupied and update their status over time, while the waiting lists keep track of customers who are waiting for tables.
@@ -27,7 +42,7 @@ Here is an example for 5000 repeated simulations. Simulated a rate of 2.8 for th
 
 ![Sales](https://user-images.githubusercontent.com/100022747/213763864-cccff059-c500-4256-9122-254724e3ab41.png)
 
-## Time Distrbution
+## Time Distribution
 
 Distribution of time spent for customers. 
 
