@@ -1,5 +1,4 @@
-
-// use csv;// use rand::distributions::distribution::Distribution;
+use std::thread;
 use rand::distributions::Uniform;
 use rand::distributions::{Distribution, Standard};
 use rand::{thread_rng, Rng};
@@ -531,13 +530,18 @@ impl Waiting_List {
 
 
 
-
 fn main(){
-    for _i in 0..5000000{
-        toloop();
-    }
-}
+    let mut iters:u64 = 1000000/2;
+    iters/=16;
+    thread::scope(|s| {
+        for j in 0..16{
+            let handle = s.spawn(move || {
+                for _i in 0..iters as usize{
+                    toloop();
+                }
 
+            });}});
+}
 
 
 
