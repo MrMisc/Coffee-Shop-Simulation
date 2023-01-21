@@ -73,11 +73,13 @@ This is after peak hour simulation is over
 
 I assume that once the tables are full, that the waiting list takes priority, and that the available space of the table is only considered for the FIRST group of customers that are in the waiting list. In other words, suppose at some point, there are 3 seats available, and that there is a list of people in the Waiting List who are of sizes 4,2 and 6, in that order. The group of 2, will not get to occupy that space. The group of 4 that are earlier in that waiting list essentially MAKE the remaining groups of customers, of whichever size, wait for them to get seated, before they get to seat themselves.
 
+In the code, the waiting time for a table, is counted based off of the table configuration that WILL happen for the MOST recent customer inside the waiting list! If that waiting list happens to be empty, then and only then, is the waiting time calculated from the actual table seats configuration at the current time.
+
 This might vary in real life scenarios. However, making it such that the smaller groups have a preference may lead to larger groups perpetually never getting seated, and was thus not considered.
 
 Modelling some realistic and sustainable version was difficult to come up with in this scenario and so was simplified to this format.
 
-### Choping considerations
+### Reservation considerations
 
 In this scenario, customers who chope take 10min to ascertain if there is a table available for them. We do not assume that the customer who is choping can immediately calculate the time they have left to wait for a table to be free and leave pre-emptively.
 
