@@ -14,31 +14,30 @@ sales, influx, interest, WaitTable, InCourt, sales2, influx2, interest2, WaitTab
 TimeSpent_1 = []
 TimeSpent_2 = []
 count = -1
+
 while True:
-    count+=1
     try:
-        if count%3==0:
-            DAT= input().split(" ")
-            sales.append(float(DAT[0]))
-            influx.append(float(DAT[1]))
-            interest.append(float(DAT[2]))
-            WaitTable.append(float(DAT[3]))
-            InCourt.append(float(DAT[4]))
-            sales2.append(float(DAT[5]))
-            influx2.append(float(DAT[6]))
-            interest2.append(float(DAT[7]))
-            WaitTable2.append(float(DAT[8]))
-            InCourt2.append(float(DAT[9]))            
-        elif count%3==1:
-            TimeSpent_1.append(input())
-        elif count%3==2:
-            TimeSpent_2.append(input())
+        DAT_numbers= input().split(" v1")
+        DAT = DAT_numbers[0].split(" ")
+        sales.append(float(DAT[0]))
+        influx.append(float(DAT[1]))
+        interest.append(float(DAT[2]))
+        WaitTable.append(float(DAT[3]))
+        InCourt.append(float(DAT[4]))
+        sales2.append(float(DAT[5]))
+        influx2.append(float(DAT[6]))
+        interest2.append(float(DAT[7]))
+        WaitTable2.append(float(DAT[8]))
+        InCourt2.append(float(DAT[9]))
+        vectors = DAT_numbers[1].split(" v2")            
+        TimeSpent_1.append(vectors[0])
+        TimeSpent_2.append(vectors[1])
     except:break
 
 
 
-# print(TimeSpent_1[2])
-# print(TimeSpent_2[2])
+print(TimeSpent_1[2])
+print(TimeSpent_2[2])
 
 
 # print(f"First is of type {type(TimeSpent_1[2])}")
@@ -47,15 +46,20 @@ while True:
 Times1 = []
 Times2 = []
 for i in TimeSpent_1:
-    for j in i[1:-1].split(", "):
-        Times1.append(float(j))
+    i = i.replace(" [","").replace("] ","")
+    for j in i.split(", "):
+        j = j.replace("]","")
+        j = j.replace("[","")
+        try:Times1.append(float(j))
+        except:pass
 
 for i in TimeSpent_2:
-    for j in i[1:-1].split(", "):
-        Times2.append(float(j))
-
-# print(Times1[20]>Times1[45])
-# print(f"Length of new times vector is {len(Times1)}")
+    i = i.replace(" [","").replace("] ","")
+    for j in i[2:-1].split(", "):
+        j = j.replace("]","")
+        j = j.replace("[","")
+        try:Times2.append(float(j))
+        except:pass
 
 
 #Data plotting
