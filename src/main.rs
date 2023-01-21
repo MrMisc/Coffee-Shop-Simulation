@@ -824,8 +824,8 @@ fn toloop() {
 
     //Outputting results as print-------------------------------------------------
 
-    println!("{} {} {} {} {} {} {} {} {} {}", orders, total_visitors, total_patrons, in_wait, cust_lag, orders2, total_visitors2, total_patrons2, in_wait2, cust_lag2);
-    println!("{:?}",time_spent);
-    println!("{:?}",time_spent2);
+    println!("{} {} {} {} {} {} {} {} {} {} v1 {:?} v2 {:?}", orders, total_visitors, total_patrons, in_wait, cust_lag, orders2, total_visitors2, total_patrons2, in_wait2, cust_lag2, time_spent, time_spent2);
+    // println!("{:?}",time_spent);
+    // println!("{:?}",time_spent2);
 
 }
