@@ -1,4 +1,12 @@
 # Coffee Shop Simulation
+
+## Running the code 
+
+Open up cmd prompt in this directory, and run ``cargo run | py plot.py``.
+
+Note that to adjust the number of trials, you need to go into the main.rs file inside the src folder.
+
+## Some details
  Using Rust's Structs, Impls to reconstruct a relatively complicated scenario 
 
 I have used Rust to simulate the operations of a food court, in order to determine which system of seat reservation, the "chope" system or the first-come-first-served system, is more efficient.
